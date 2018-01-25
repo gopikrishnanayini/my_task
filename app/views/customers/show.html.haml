@@ -1,0 +1,16 @@
+.container.bg-9
+  .row
+    %br/
+    %p
+      %strong Email:
+      = @customer.first_name
+    %p
+      %strong First Name:
+      = @customer.first_name
+    %p
+      %strong Last Name:
+      = @customer.last_name
+    %p
+      %strong Profile Picture:
+      = @customer.image.url(:medium)
+    = link_to 'Back', customers_path, :class => "btn btn-success", :style => "text-decoration:none"

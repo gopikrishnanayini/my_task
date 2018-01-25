@@ -1,0 +1,10 @@
+= form_for @customer, html: { multipart: true }  do |f|
+  = f.label 'Email'
+  = f.text_field :email 
+  = f.label 'First Name'
+  = f.text_field :first_name 
+  = f.label 'Last Name'
+  = f.text_field :last_name 
+  = f.label 'Profile Picture' 
+  = f.file_field :image
+  = f.submit "Submit"

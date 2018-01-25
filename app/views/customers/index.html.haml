@@ -1,0 +1,21 @@
+.container.bg-9
+  .row
+    %br/
+    %h1 Listing Users
+    %table.table.table-bordered.table-striped
+      %thead
+        %tr
+          %th Email
+          %th First Name
+          %th Last Name
+          %th Profile Picture
+        - @customers.each do |customer|
+          %tr
+            %td= customer.email
+            %td= customer.first_name
+            %td= customer.last_name
+            %td= customer.image.url(:medium)
+            %td= link_to 'show', customer_path(customer)
+            %td= link_to 'edit', edit_customer_path(customer)
+            %td= link_to 'destroy', customer_path(customer), method: :delete, data: { clear:'Are you sure?'}
+    = link_to "New User", new_customer_path, :class => "btn btn-success", :style => "text-decoration:none"
